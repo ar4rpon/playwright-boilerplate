@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "./src/**/*.ts" // ./src ディレクトリとそのサブディレクトリのすべての TypeScript ファイルが対象
+  ],
+  "exclude": [
+    // "./src/function/**/*.ts" // ./src/function ディレクトリとそのサブディレクトリの TypeScript ファイルを除外
+  ]
+}
