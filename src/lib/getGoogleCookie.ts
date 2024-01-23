@@ -4,8 +4,8 @@ dotenv.config();
 
 
 async function getLoginCookies(): Promise<Cookie[]> {
-  const GOOGLE_MAIL: string = process.env.GOOGLE_MAIL;
-  const GOOGLE_PASS: string = process.env.GOOGLE_PASS;
+  const GOOGLE_MAIL: string = process.env.GOOGLE_MAIL as string;
+  const GOOGLE_PASS: string = process.env.GOOGLE_PASS as string;
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
 
