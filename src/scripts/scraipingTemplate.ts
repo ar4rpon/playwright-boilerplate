@@ -1,4 +1,5 @@
 import { chromium, Browser, Page } from "playwright";
+import { writeToCSV } from "../lib/csvWriter";
 
 async function run() {
   // ブラウザを起動
@@ -38,3 +39,25 @@ async function run() {
 }
 
 run();
+
+// csv出力のサンプルコード
+// 使用するデータとヘッダー
+const data = [
+  { column2: "value1", column1: "value2" },
+  { column1: "value1", column2: "value2" },
+  { column1: "value1", column2: "value2" }
+];
+const headers = [
+  { id: "column1", title: "COLUMN1" },
+  { id: "column2", title: "COLUMN2" }
+  // 他のヘッダー情報
+];
+
+// CSVファイルに書き込み
+writeToCSV(data, headers, "tmp/output.csv")
+  .then(() => {
+    console.log("CSVファイルが生成されました");
+  })
+  .catch((error) => {
+    console.error("CSVファイルの生成中にエラーが発生しました", error);
+  });
